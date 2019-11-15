@@ -5,7 +5,6 @@ import { Route, Link } from 'react-router-dom';
 
 import Posts from './../Posts/Posts';
 import NewPost from './../NewPost/NewPost';
-import FullPost from './../FullPost/FullPost';
 
 class Blog extends Component {
 
@@ -15,7 +14,7 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/posts">Posts</Link></li>
                             <li><Link to={{
                                 pathname: "/new-post",
                                 hash: 'submit',
@@ -25,9 +24,8 @@ class Blog extends Component {
                     </nav>
                 </header>
                 <section>
-                    <Route path='/' exact component={Posts} />
+                    <Route path='/posts' component={Posts} />
                     <Route path='/new-post' exact component={NewPost} />
-                    <Route path='/posts/:id' exact component={FullPost} />
                 </section>
             </div>
         );
